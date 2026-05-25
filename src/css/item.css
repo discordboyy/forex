@@ -157,3 +157,58 @@
 .inbox-item.expanded .item-preview {
   -webkit-line-clamp: unset;
 }
+
+
+
+
+
+
+
+/* =========================================
+   EXPAND / COLLAPSE (SMOOTH MOBILE)
+========================================= */
+
+.chevron-icon {
+  transition:
+    transform 0.28s cubic-bezier(.22,.61,.36,1),
+    color 0.2s ease;
+  will-change: transform;
+}
+
+.inbox-item.expanded .chevron-icon {
+  transform: rotate(90deg);
+  color: #8e8e93;
+}
+
+/* Expanded wrapper */
+
+.item-expanded {
+  transform-origin: top;
+  transform: scaleY(0.96);
+  opacity: 0;
+
+  max-height: 0;
+  overflow: hidden;
+
+  will-change: transform, opacity;
+
+  transition:
+    transform 0.28s cubic-bezier(.22,.61,.36,1),
+    opacity 0.2s ease;
+}
+
+.inbox-item.expanded .item-expanded {
+  transform: scaleY(1);
+  opacity: 1;
+
+  max-height: 1000px;
+  margin-top: 14px;
+}
+
+.inbox-item,
+.item-expanded,
+.chevron-icon {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
