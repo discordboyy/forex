@@ -1,0 +1,63 @@
+.status-icons svg {
+  transition: opacity 0.8s ease;
+}
+
+.status-icons svg:hover {
+  opacity: 1;
+}
+
+.wifi {
+}
+
+.wifi-dot, .battery-fill {
+  fill: white;
+}
+
+@keyframes micro-flicker {
+  0% { opacity: 0.85; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+.status-icons svg {
+  animation: micro-flicker 4s infinite;
+}
+
+/* базовый цвет */
+.bar4,
+.wifi-2 {
+  stroke: white;
+  opacity: 0.6;
+  transition: opacity 0.4s ease, stroke 0.4s ease;
+}
+
+/* "подсвеченное" состояние */
+.bar4.active,
+.wifi-2.active {
+  opacity: 1;
+  stroke: #ffffff;
+}
+
+/* анимация редкого включения */
+@keyframes flickerSoft {
+  0%, 85% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* применяем только к нужным элементам */
+.bar4 {
+  animation: flickerSoft 6s infinite;
+  animation-delay: 1s;
+}
+
+.wifi-2 {
+  animation: flickerSoft 7s infinite;
+  animation-delay: 2.5s;
+}
