@@ -284,7 +284,7 @@
 
   /* Загрузка JSON */
 
-  async function loadInbox(){
+  async function loadInbox() {
 
     const response =
       await fetch('./src/data/inbox.json');
@@ -292,14 +292,25 @@
     const inboxData =
       await response.json();
 
+    const now = new Date();
+
+    const filteredInbox = inboxData.filter(item => {
+
+      if (!item.expires) return true;
+
+      const expireDate =
+        new Date(item.expires);
+
+      return expireDate > now;
+
+    });
 
     document
       .getElementById('inboxList')
       .innerHTML =
-        inboxData
+        filteredInbox
           .map(buildItem)
           .join('');
-
 
     attachExpandEvents();
 
