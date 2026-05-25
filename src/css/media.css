@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .status-bar,
+  .home-indicator {
+    display: none;
+  }
+
+  .header {
+    padding-top: calc(14px + env(safe-area-inset-top));
+  }
+}
