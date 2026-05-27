@@ -35,8 +35,7 @@
   gap: 7px;
 }
 
-.search-icon,
-.search-mic {
+.search-icon {
   flex-shrink: 0;
   color: #8e8e93;
 }
