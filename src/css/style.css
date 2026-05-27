@@ -78,30 +78,6 @@
   }
   .avatar-btn:active { opacity: 0.6; }
 
-  /* Search Bar */
-  .search-container {
-    flex-shrink: 0;
-    padding: 8px 20px 10px 20px;
-  }
-
-  .search-bar {
-    background: #1c1c1e;
-    border-radius: 12px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    gap: 7px;
-  }
-
-  .search-placeholder {
-    flex: 1;
-    font-size: 17px;
-    color: #8e8e93;
-    letter-spacing: -0.2px;
-    user-select: none;
-  }
-
   /* Scroll area */
   .inbox-scroll {
     flex: 1;
