@@ -59,6 +59,7 @@ export function initInboxSearch({ root, list }) {
 
   const input = rootEl.querySelector('.search-input');
   const filter = rootEl.querySelector('.search-filter');
+  const unreadInput = rootEl.querySelector('.unread-input');
   const items = Array.from(listEl.querySelectorAll('.inbox-item'));
 
   const itemIndex = items.map(item => {
@@ -87,6 +88,7 @@ export function initInboxSearch({ root, list }) {
   function filterItems() {
     const query = normalize(input.value);
     const selectedTag = normalize(filter.value);
+    const unreadOnly = unreadInput.checked;
     let visibleCount = 0;
 
     itemIndex.forEach(item => {
@@ -96,7 +98,10 @@ export function initInboxSearch({ root, list }) {
       const matchesTag =
         !selectedTag || item.normalizedTags.includes(selectedTag);
 
-      const isVisible = matchesQuery && matchesTag;
+      const matchesUnread =
+        !unreadOnly || item.element.classList.contains('is-unread');
+
+      const isVisible = matchesQuery && matchesTag && matchesUnread;
 
       item.element.hidden = !isVisible;
       item.element.classList.toggle('expanded', false);
@@ -110,6 +115,8 @@ export function initInboxSearch({ root, list }) {
   input.addEventListener('input', filterItems);
   input.addEventListener('search', filterItems);
   filter.addEventListener('change', filterItems);
+  unreadInput.addEventListener('change', filterItems);
+  document.addEventListener('inbox:read-state-change', filterItems);
 
   filterItems();
 

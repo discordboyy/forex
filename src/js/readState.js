@@ -35,6 +35,12 @@ function applyReadState(item, isRead) {
   item.classList.toggle('is-unread', !isRead);
 }
 
+function notifyReadStateChanged() {
+  document.dispatchEvent(
+    new CustomEvent('inbox:read-state-change')
+  );
+}
+
 export function initInboxReadState({ list }) {
   const listEl = resolveElement(list);
   const readIds = loadReadIds();
@@ -62,6 +68,7 @@ export function initInboxReadState({ list }) {
     readIds.add(id);
     saveReadIds(readIds);
     applyReadState(item, true);
+    notifyReadStateChanged();
   }
 
   function markAllRead() {
@@ -75,6 +82,7 @@ export function initInboxReadState({ list }) {
     });
 
     saveReadIds(readIds);
+    notifyReadStateChanged();
   }
 
   return {
