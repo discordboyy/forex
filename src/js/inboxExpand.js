@@ -1,4 +1,4 @@
-export function attachExpandEvents() {
+export function attachExpandEvents({ onOpen } = {}) {
 
   const items =
     document.querySelectorAll('.inbox-item');
@@ -38,6 +38,8 @@ export function attachExpandEvents() {
       // плавно поднять карточку вверх
 
       if (!alreadyOpen) {
+
+        onOpen?.(item);
 
         setTimeout(() => {
 

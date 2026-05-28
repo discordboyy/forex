@@ -1,5 +1,6 @@
 [
   {
+    "id": "weekly-macro-desk-2026-06-01",
     "name": "Weekly Macro Desk",
     "online": true,
     "date": "1-6 июня",
@@ -15,6 +16,7 @@
     "iconIdx": 0
   },
   {
+    "id": "monday-setup-2026-05-25",
     "name": "Monday Setup",
     "online": false,
     "date": "Пн",
@@ -30,6 +32,7 @@
     "iconIdx": 1
   },
   {
+    "id": "tuesday-setup-2026-05-26",
     "name": "Tuesday Setup",
     "online": true,
     "date": "Вт",
@@ -45,6 +48,7 @@
     "iconIdx": 2
   },
   {
+    "id": "wednesday-setup-2026-05-27",
     "name": "Wednesday Setup",
     "online": true,
     "date": "Ср",
@@ -60,6 +64,7 @@
     "iconIdx": 3
   },
   {
+    "id": "thursday-setup-2026-05-28",
     "name": "Thursday Setup",
     "online": false,
     "date": "Чт",
@@ -133,6 +138,7 @@
     "iconIdx": 4
   },
   {
+    "id": "friday-nfp-desk-2026-05-29",
     "name": "Friday NFP Desk",
     "online": true,
     "date": "Пт",
@@ -218,6 +224,7 @@
     "iconIdx": 5
   },
   {
+    "id": "equity-index-view-2026-05-31",
     "name": "Equity Index View",
     "online": false,
     "date": "Активы",
@@ -233,6 +240,7 @@
     "iconIdx": 6
   },
   {
+    "id": "metals-view-2026-05-31",
     "name": "Metals View",
     "online": true,
     "date": "Активы",
@@ -248,6 +256,7 @@
     "iconIdx": 7
   },
   {
+    "id": "fx-view-2026-05-31",
     "name": "FX View",
     "online": false,
     "date": "FX",
@@ -263,6 +272,7 @@
     "iconIdx": 8
   },
   {
+    "id": "weekly-playbook-2026-05-31",
     "name": "Weekly Playbook",
     "online": true,
     "date": "План",

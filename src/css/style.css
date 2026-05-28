@@ -170,6 +170,16 @@
     background: #FFD60A;
     border-radius: 50%;
     flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(255, 214, 10, 0.12);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .inbox-item.is-read .unread-dot {
+    opacity: 0;
+    transform: scale(0.55);
+    pointer-events: none;
   }
 
   .item-date-row {

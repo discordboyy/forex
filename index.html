@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inbox</title>
-<link rel="stylesheet" href="src/css/style.css?v=2">
+<link rel="stylesheet" href="src/css/style.css?v=3">
 <link rel="stylesheet" href="src/css/item.css?v=3">
 <link rel="stylesheet" href="src/css/search.css">
 <link rel="stylesheet" href="src/css/scroll-bar.css">
@@ -71,7 +71,10 @@
 <script type="module">
 
   import { attachExpandEvents }
-  from './src/js/inboxExpand.js';
+  from './src/js/inboxExpand.js?v=2';
+
+  import { initInboxReadState }
+  from './src/js/readState.js';
 
   import { initInboxSearch }
   from './src/components/searchBar.js';
@@ -180,10 +183,15 @@
     const style = iconStyles[item.iconIdx % iconStyles.length];
     const iconSvg = svgIcons[style.type] || svgIcons.map;
 
-    const onlineDot =
-      item.online
-        ? `<span class="online-dot"></span>`
-        : '';
+    const itemId =
+      item.id ||
+      `${item.name}-${item.date}-${item.expires}`
+        .toLowerCase()
+        .replace(/[^a-z0-9а-яё]+/gi, '-')
+        .replace(/^-|-$/g, '');
+
+    const unreadDot =
+      `<span class="online-dot unread-dot" title="New"></span>`;
 
     const metaHTML =
       item.hasMeta
@@ -208,7 +216,7 @@
     const scenarios = buildScenarios(item.scenarios);
 
     return `
-    <div class="inbox-item">
+    <div class="inbox-item" data-inbox-id="${itemId}">
 
       <div class="inbox-item-inner">
 
@@ -226,7 +234,7 @@
                 ${item.name}
               </span>
 
-              ${onlineDot}
+              ${unreadDot}
             </div>
 
             <div class="item-date-row">
@@ -335,7 +343,7 @@
   async function loadInbox() {
 
     const response =
-      await fetch('./src/data/inbox.json?v=2');
+      await fetch('./src/data/inbox.json?v=3');
 
     const inboxData =
       await response.json();
@@ -360,7 +368,14 @@
           .map(buildItem)
           .join('');
 
-    attachExpandEvents();
+    const readState = initInboxReadState({
+      list: '#inboxList'
+    });
+
+    attachExpandEvents({
+      onOpen: item => readState.markRead(item)
+    });
+
     initInboxSearch({
       root: '#inboxSearch',
       list: '#inboxList'
