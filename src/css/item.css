@@ -26,7 +26,7 @@
 }
 
 .inbox-item.expanded .item-expanded {
-  max-height: 700px;
+  max-height: 2200px;
   opacity: 1;
   margin-top: 14px;
 }
@@ -39,6 +39,112 @@
   color: #d1d1d6;
   letter-spacing: -0.1px;
   margin-bottom: 16px;
+}
+
+/* Scenario playbook */
+
+.scenario-block {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px 0;
+}
+
+.scenario-card {
+  padding: 12px;
+  border-radius: 8px;
+  background: #121214;
+  border: 1px solid #2c2c2e;
+}
+
+.scenario-card.base {
+  border-color: rgba(48, 209, 88, 0.45);
+}
+
+.scenario-card.alternative {
+  border-color: rgba(255, 159, 10, 0.36);
+}
+
+.scenario-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.scenario-label {
+  min-width: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.scenario-score {
+  flex-shrink: 0;
+  color: #8e8e93;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.scenario-trigger {
+  color: #f2f2f7;
+  font-size: 13px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.scenario-summary,
+.scenario-note {
+  color: #8e8e93;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.scenario-assets {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.scenario-asset {
+  padding: 8px 9px;
+  border-radius: 8px;
+  background: #1c1c1e;
+}
+
+.scenario-asset-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.scenario-symbol {
+  min-width: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scenario-move {
+  flex-shrink: 0;
+  color: #d1d1d6;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scenario-asset.up .scenario-move {
+  color: #30d158;
+}
+
+.scenario-asset.down .scenario-move {
+  color: #ff453a;
+}
+
+.scenario-note {
+  margin-top: 3px;
 }
 
 /* Sections */
@@ -190,25 +296,31 @@
   max-height: 0;
   overflow: hidden;
 
-  will-change: transform, opacity;
+  will-change: max-height, transform, opacity;
 
   transition:
-    transform 0.28s cubic-bezier(.22,.61,.36,1),
-    opacity 0.2s ease;
+    max-height 0.48s cubic-bezier(.22,.61,.36,1),
+    transform 0.32s cubic-bezier(.22,.61,.36,1),
+    opacity 0.22s ease,
+    margin-top 0.22s ease;
 }
 
 .inbox-item.expanded .item-expanded {
   transform: scaleY(1);
   opacity: 1;
 
-  max-height: 1000px;
+  max-height: 2200px;
   margin-top: 14px;
 }
 
 .inbox-item,
-.item-expanded,
 .chevron-icon {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
+}
+
+.item-expanded {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }

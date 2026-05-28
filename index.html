@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inbox</title>
 <link rel="stylesheet" href="src/css/style.css?v=2">
-<link rel="stylesheet" href="src/css/item.css">
+<link rel="stylesheet" href="src/css/item.css?v=3">
 <link rel="stylesheet" href="src/css/search.css">
 <link rel="stylesheet" href="src/css/scroll-bar.css">
 <link rel="stylesheet" href="src/css/animations.css">
@@ -123,6 +123,59 @@
     </svg>`;
   }
 
+  function directionArrow(direction) {
+    if (direction === 'up') return '↑';
+    if (direction === 'down') return '↓';
+    return '→';
+  }
+
+  function buildScenarioAssets(assets = []) {
+    return assets.map(asset => `
+      <div class="scenario-asset ${asset.direction || 'flat'}">
+        <div class="scenario-asset-main">
+          <span class="scenario-symbol">${asset.symbol}</span>
+          <span class="scenario-move">
+            ${directionArrow(asset.direction)}
+            ${asset.move}
+          </span>
+        </div>
+        ${asset.note ? `<div class="scenario-note">${asset.note}</div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  function buildScenarios(scenarios = []) {
+    if (!scenarios.length) return '';
+
+    return `
+      <div class="scenario-block">
+        ${scenarios.map(scenario => `
+          <div class="scenario-card ${scenario.type || ''}">
+            <div class="scenario-top">
+              <span class="scenario-label">${scenario.label}</span>
+              <span class="scenario-score">
+                ${scenario.probability}%
+                · ${scenario.confidence}
+              </span>
+            </div>
+
+            <div class="scenario-trigger">
+              ${scenario.trigger}
+            </div>
+
+            <div class="scenario-summary">
+              ${scenario.summary}
+            </div>
+
+            <div class="scenario-assets">
+              ${buildScenarioAssets(scenario.assets)}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
   function buildItem(item) {
     const style = iconStyles[item.iconIdx % iconStyles.length];
     const iconSvg = svgIcons[style.type] || svgIcons.map;
@@ -151,6 +204,8 @@
       item.people?.map(
         person => `<div class="chip">${person}</div>`
       ).join('') || '';
+
+    const scenarios = buildScenarios(item.scenarios);
 
     return `
     <div class="inbox-item">
@@ -220,6 +275,8 @@
               ${item.fullMessage}
             </div>
 
+            ${scenarios}
+
 
             <div class="expanded-section">
 
@@ -278,7 +335,7 @@
   async function loadInbox() {
 
     const response =
-      await fetch('./src/data/inbox.json');
+      await fetch('./src/data/inbox.json?v=2');
 
     const inboxData =
       await response.json();

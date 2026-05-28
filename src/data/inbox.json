@@ -69,6 +69,64 @@
     "fullMessage": "<strong>Ключевые события:</strong><br>US Initial Claims и Unit Labor Costs в 14:30.<br><br><strong>Почему это важно:</strong><br>Это комбинация рынка труда и инфляции зарплат. Она может изменить ожидания по ФРС перед NFP.<br><br><strong>Бычий сценарий для акций:</strong><br>Если claims вырастут, а labor costs снизятся, доходности могут упасть, акции — остаться сильными, а Gold — сохранить поддержку.<br><br><strong>Медвежий сценарий для акций:</strong><br>Если labor costs окажутся высокими, а claims останутся низкими, рынок может переоценить риск более длительного сохранения высоких ставок ФРС. USD и доходности могут вырасти.<br><br><strong>Примечание по рискам:</strong><br>Четверг перед NFP часто сопровождается низкой ликвидностью, выносами стопов и фиксацией позиций. Избегайте слишком больших объёмов.",
     "places": ["Initial Claims", "Labor Costs", "Pre-NFP", "US Yields"],
     "people": ["Gold", "EURUSD", "NASDAQ", "USD"],
+    "scenarios": [
+      {
+        "label": "Более вероятный сценарий",
+        "type": "base",
+        "probability": 58,
+        "confidence": "medium",
+        "trigger": "Claims немного выше ожиданий, labor costs без неприятного инфляционного сюрприза.",
+        "summary": "Рынок может удержать мягкий risk-on перед NFP: доходности ниже, Gold устойчивый, NASDAQ без сильного давления.",
+        "assets": [
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.4-0.8%",
+            "note": "поддержка через снижение доходностей"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "up",
+            "move": "+0.3-0.7%",
+            "note": "умеренный рост без агрессивного импульса"
+          },
+          {
+            "symbol": "USD",
+            "direction": "down",
+            "move": "-0.2-0.4%",
+            "note": "слабее при мягких данных по труду"
+          }
+        ]
+      },
+      {
+        "label": "Менее вероятный сценарий",
+        "type": "alternative",
+        "probability": 42,
+        "confidence": "medium-low",
+        "trigger": "Labor costs выше ожиданий, claims остаются низкими.",
+        "summary": "Рынок может переоценить риск более долгих высоких ставок: USD и доходности вверх, акции и Gold под давлением.",
+        "assets": [
+          {
+            "symbol": "US Yields",
+            "direction": "up",
+            "move": "+4-8 bps",
+            "note": "главный канал давления на risk assets"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "down",
+            "move": "-0.5-1.0%",
+            "note": "уязвим при росте real yields"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "down",
+            "move": "-0.5-1.1%",
+            "note": "давление через ставки"
+          }
+        ]
+      }
+    ],
     "timestamp": "Данные США: 14:30",
     "meta": "Средне-высокая волатильность",
     "hasMeta": true,
@@ -84,6 +142,76 @@
     "fullMessage": "<strong>Ключевые события:</strong><br>US Non-Farm Payrolls, уровень безработицы и Average Hourly Earnings в 14:30.<br><br><strong>Приоритет важности:</strong><br>1. Average Hourly Earnings<br>2. Уровень безработицы<br>3. Payrolls headline<br><br><strong>Бычий risk-on сценарий:</strong><br>Если payrolls окажутся слабее, безработица вырастет, а зарплаты замедлятся, доходности могут резко упасть, Gold — сильно вырасти, NASDAQ — показать мощное ралли, а USD — агрессивно снизиться.<br><br><strong>Бычий для USD risk-off сценарий:</strong><br>Если payrolls будут сильными, а зарплаты — высокими, ожидания снижения ставок ФРС могут быть пересмотрены, доходности — резко вырасти, USD — укрепиться, Gold — сильно снизиться, а акции — попасть под давление.<br><br><strong>Предупреждение по NFP:</strong><br>Первые движения часто оказываются выносом стопов с разворотом через 5-20 минут, особенно когда payrolls и wages противоречат друг другу.",
     "places": ["14:25-15:30 NY", "AHE", "Unemployment", "Payrolls"],
     "people": ["Gold", "NASDAQ", "USD", "US10Y"],
+    "scenarios": [
+      {
+        "label": "Более вероятный сценарий",
+        "type": "base",
+        "probability": 55,
+        "confidence": "medium",
+        "trigger": "Wages замедляются, unemployment чуть выше или payrolls без сильного upside-сюрприза.",
+        "summary": "Risk-on реакция: доходности вниз, Gold и NASDAQ получают импульс, USD слабеет.",
+        "assets": [
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.8-1.5%",
+            "note": "самая чистая реакция на падение доходностей"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "up",
+            "move": "+1.0-1.8%",
+            "note": "чувствителен к переоценке ставок"
+          },
+          {
+            "symbol": "USD",
+            "direction": "down",
+            "move": "-0.4-0.8%",
+            "note": "снижение при мягком labor report"
+          },
+          {
+            "symbol": "US10Y",
+            "direction": "down",
+            "move": "-6-12 bps",
+            "note": "ключевое подтверждение сценария"
+          }
+        ]
+      },
+      {
+        "label": "Менее вероятный сценарий",
+        "type": "alternative",
+        "probability": 45,
+        "confidence": "medium-low",
+        "trigger": "Payrolls сильные, wages выше ожиданий, unemployment не растёт.",
+        "summary": "Risk-off через ставки: доходности и USD вверх, Gold и акции получают резкое давление.",
+        "assets": [
+          {
+            "symbol": "USD",
+            "direction": "up",
+            "move": "+0.5-1.0%",
+            "note": "реакция на hawkish repricing"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "down",
+            "move": "-1.0-1.8%",
+            "note": "может резко просесть на росте доходностей"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "down",
+            "move": "-1.2-2.2%",
+            "note": "самый уязвимый индекс при скачке yields"
+          },
+          {
+            "symbol": "US10Y",
+            "direction": "up",
+            "move": "+8-15 bps",
+            "note": "если движение подтверждается облигациями"
+          }
+        ]
+      }
+    ],
     "timestamp": "Максимальная волатильность: 14:25-15:30 NY",
     "meta": "Экстремальная волатильность — главное событие",
     "hasMeta": true,
