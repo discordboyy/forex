@@ -1,6 +1,6 @@
 [
   {
-    "id": "weekly-macro-desk-2026-06-01",
+    "id": "weekly-macro-desk-2026-06-08",
     "name": "Weekly Macro Desk",
     "online": true,
     "date": "1-6 июня",
@@ -16,77 +16,287 @@
     "iconIdx": 0
   },
   {
-    "id": "monday-setup-2026-05-25",
+    "id": "monday-setup-2026-06-01",
     "name": "Monday Setup",
-    "online": false,
+    "online": true,
     "date": "Пн",
-    "expires": "2026-05-25T23:59:59",
-    "title": "ISM Manufacturing: первое крупное событие риска",
-    "preview": "Наибольшая волатильность ожидается во время выхода данных в Нью-Йорке...",
-    "fullMessage": "<strong>Ключевые события:</strong><br>Китайские PMI во время азиатской сессии. ISM Manufacturing и ISM Manufacturing Prices в 16:00.<br><br><strong>Самое важное событие:</strong><br>ISM Manufacturing PMI. Рынок будет больше обращать внимание на prices paid, new orders и employment, чем на основной показатель.<br><br><strong>Бычий risk-on сценарий:</strong><br>Если ISM окажется достаточно слабым для поддержки ожиданий снижения ставок, но не настолько слабым, чтобы сигнализировать о рецессии, а prices paid снизится, NASDAQ может вырасти, DAX — последовать за ним, Gold — остаться сильным, USD — ослабнуть, а доходности — снизиться.<br><br><strong>Медвежий risk-off сценарий:</strong><br>Если инфляционное давление останется высоким, а headline или employment превзойдут ожидания, доходности могут резко вырасти, USD — укрепиться, Gold — сначала упасть, а акции — попасть под давление.",
-    "places": ["15:45-16:30 NY", "ISM Prices", "New Orders", "US10Y"],
+    "expires": "2026-06-01T23:59:59",
+    "title": "ISM Manufacturing и Powell: двойной удар по USD-сентименту",
+    "preview": "Наибольшая волатильность ожидается во время выхода ISM и выступления Powell...",
+    "fullMessage": "<strong>Ключевые события:</strong><br>Выступление Powell в 00:00 (начало недели — азиатская сессия). ISM Manufacturing PMI и ISM Manufacturing Prices в 16:00 (Нью-Йорк). Final Manufacturing PMI в 15:45.<br><br><strong>Самое важное событие:</strong><br>ISM Manufacturing PMI. Рынок будет больше обращать внимание на Prices Paid, New Orders и Employment, чем на основной показатель. Прогноз 53.3 vs предыдущее 52.7 — потенциальный upside-сюрприз.<br><br><strong>Выступление Powell:</strong><br>Любые намёки на паузу или изменение риторики могут переоценить USD и доходности ещё до выхода ISM. Следить за тоном по инфляции услуг и срокам снижения ставок.<br><br><strong>Бычий risk-on сценарий:</strong><br>Если ISM умеренно силён, но Prices Paid снизится ниже прогноза, а Powell звучит нейтрально — NASDAQ может вырасти, DAX последовать, Gold остаться сильным, USD ослабнуть.<br><br><strong>Медвежий risk-off сценарий:</strong><br>Если ISM Prices Paid удержится выше 85 или Powell ужесточит риторику — доходности резко вырастут, USD укрепится, Gold попадёт под давление, акции скорректируются.<br><br><strong>Ловушка ликвидности:</strong><br>Немецкий Retail Sales в 08:00 и EUR Unemployment Rate в 11:00 могут создать ложный импульс по EURUSD до ключевых данных США.",
+    "places": ["15:45-16:30 NY", "Powell Speech", "ISM Prices", "German Retail"],
     "people": ["NASDAQ", "Gold", "EURUSD", "DAX"],
+    "scenarios": [
+      {
+        "label": "Более вероятный сценарий",
+        "type": "base",
+        "probability": 56,
+        "confidence": "medium",
+        "trigger": "ISM Manufacturing около 53.3, Prices Paid снижается или не превышает прогноз 85.3. Powell звучит нейтрально, без новых ястребиных сигналов.",
+        "summary": "Умеренный risk-on: доходности стабильны или снижаются, NASDAQ и DAX получают поддержку, USD слабеет, Gold удерживает уровни.",
+        "assets": [
+          {
+            "symbol": "NASDAQ",
+            "direction": "up",
+            "move": "+0.4-0.9%",
+            "note": "чувствителен к ISM Prices Paid — ключевой инфляционный sub-index"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.3-0.7%",
+            "note": "поддержка через стабильные или снижающиеся доходности"
+          },
+          {
+            "symbol": "USD",
+            "direction": "down",
+            "move": "-0.2-0.4%",
+            "note": "ослабление при нейтральном Powell и умеренном ISM"
+          },
+          {
+            "symbol": "DAX",
+            "direction": "up",
+            "move": "+0.3-0.6%",
+            "note": "следует за NQ при глобальном risk-on"
+          }
+        ]
+      },
+      {
+        "label": "Менее вероятный сценарий",
+        "type": "alternative",
+        "probability": 44,
+        "confidence": "medium-low",
+        "trigger": "ISM Prices Paid выше 86+ или Powell ужесточает риторику — намёки на более длительные высокие ставки.",
+        "summary": "Risk-off через доходности: USD резко укрепляется, Gold под давлением, акции корректируются, EURUSD снижается.",
+        "assets": [
+          {
+            "symbol": "US10Y",
+            "direction": "up",
+            "move": "+5-9 bps",
+            "note": "главный триггер risk-off при горячем ISM Prices"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "down",
+            "move": "-0.5-1.0%",
+            "note": "уязвим при росте реальных доходностей"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "down",
+            "move": "-0.6-1.2%",
+            "note": "наиболее чувствителен к hawkish repricing"
+          },
+          {
+            "symbol": "EURUSD",
+            "direction": "down",
+            "move": "-0.3-0.6%",
+            "note": "USD-бид при ужесточении риторики ФРС"
+          }
+        ]
+      }
+    ],
     "timestamp": "Максимальная волатильность: 15:45-16:30 NY",
     "meta": "Нью-Йоркская сессия — высокая волатильность",
     "hasMeta": true,
     "iconIdx": 1
   },
   {
-    "id": "tuesday-setup-2026-05-26",
+    "id": "tuesday-setup-2026-06-02",
     "name": "Tuesday Setup",
     "online": true,
     "date": "Вт",
-    "expires": "2026-05-26T23:59:59",
-    "title": "CPI еврозоны и JOLTS определяют дивергенцию EUR / DAX",
-    "preview": "Сначала CPI в Лондоне, затем переоценка рынка труда США в Нью-Йорке...",
-    "fullMessage": "<strong>Ключевые события:</strong><br>Предварительный CPI еврозоны в 11:00. JOLTS Job Openings в 16:00.<br><br><strong>Лучшая внутридневная возможность:</strong><br>Торговля дивергенцией EURUSD и DAX.<br><br><strong>Бычий сценарий для EUR:</strong><br>Если Core CPI превысит прогноз, EUR может укрепиться, DAX — попасть под давление, а ожидания снижения ставок ЕЦБ могут быть пересмотрены в сторону более позднего смягчения.<br><br><strong>Медвежий сценарий для EUR:</strong><br>Если CPI окажется слабым, EUR может снизиться, тогда как DAX способен вырасти на ожиданиях смягчения политики. Gold также может получить поддержку через снижение доходностей.<br><br><strong>Ловушка:</strong><br>CPI еврозоны часто вызывает первый импульсный вынос ликвидности до того, как рынок облигаций подтвердит направление.",
-    "places": ["London CPI", "NY JOLTS", "Bund Yields", "ECB Path"],
-    "people": ["EURUSD", "DAX", "Gold", "US10Y"],
-    "timestamp": "Лондонская и Нью-Йоркская сессии",
-    "meta": "CPI - JOLTS - EUR/DAX",
-    "hasMeta": true,
-    "iconIdx": 2
-  },
-  {
-    "id": "wednesday-setup-2026-05-27",
-    "name": "Wednesday Setup",
-    "online": true,
-    "date": "Ср",
-    "expires": "2026-05-27T23:59:59",
-    "title": "ISM Services: самый взрывной катализатор середины недели",
-    "preview": "Инфляция в секторе услуг остаётся ключевой чувствительной точкой для ФРС...",
-    "fullMessage": "<strong>Ключевые события:</strong><br>GDP Австралии в 03:30, ADP Employment в 14:15, ISM Services в 16:00 и Beige Book в 20:00.<br><br><strong>Самое важное событие:</strong><br>ISM Services PMI. Ожидается экстремальная волатильность, поскольку инфляция в секторе услуг напрямую влияет на ожидания по ставкам, доходности, ликвидность USD и оценки технологических компаний.<br><br><strong>Бычий risk-on сценарий:</strong><br>Если сектор услуг умеренно ослабнет, а показатели цен и занятости снизятся, доходности могут резко упасть, NASDAQ — ускорить рост, а Gold — получить сильный спрос.<br><br><strong>Risk-off сценарий:</strong><br>Если ISM Services окажется сильным, возможен мощный скачок доходностей. USD может резко укрепиться, Gold — стать уязвимым, а акции — попасть под давление.<br><br><strong>Ловушка ликвидности:</strong><br>Классический сценарий — ложное движение на ADP, разворот, а затем настоящее движение после ISM.",
-    "places": ["ADP", "ISM Services", "Prices Paid", "Employment"],
-    "people": ["NASDAQ", "Gold", "USD", "AI Stocks"],
-    "timestamp": "Максимальная волатильность: 14:15-16:30 NY",
-    "meta": "Экстремальная волатильность — NY Session",
-    "hasMeta": true,
-    "iconIdx": 3
-  },
-  {
-    "id": "thursday-setup-2026-05-28",
-    "name": "Thursday Setup",
-    "online": false,
-    "date": "Чт",
-    "expires": "2026-05-28T23:59:59",
-    "title": "Claims и labor costs перед NFP",
-    "preview": "Сессия с пониженной ликвидностью, где важны выносы стопов и фиксация позиций...",
-    "fullMessage": "<strong>Ключевые события:</strong><br>US Initial Claims и Unit Labor Costs в 14:30.<br><br><strong>Почему это важно:</strong><br>Это комбинация рынка труда и инфляции зарплат. Она может изменить ожидания по ФРС перед NFP.<br><br><strong>Бычий сценарий для акций:</strong><br>Если claims вырастут, а labor costs снизятся, доходности могут упасть, акции — остаться сильными, а Gold — сохранить поддержку.<br><br><strong>Медвежий сценарий для акций:</strong><br>Если labor costs окажутся высокими, а claims останутся низкими, рынок может переоценить риск более длительного сохранения высоких ставок ФРС. USD и доходности могут вырасти.<br><br><strong>Примечание по рискам:</strong><br>Четверг перед NFP часто сопровождается низкой ликвидностью, выносами стопов и фиксацией позиций. Избегайте слишком больших объёмов.",
-    "places": ["Initial Claims", "Labor Costs", "Pre-NFP", "US Yields"],
-    "people": ["Gold", "EURUSD", "NASDAQ", "USD"],
+    "expires": "2026-06-02T23:59:59",
+    "title": "CPI еврозоны и JOLTS: EUR/DAX дивергенция и переоценка рынка труда",
+    "preview": "Сначала Flash CPI в Лондоне, затем JOLTS и Bailey в Нью-Йорке...",
+    "fullMessage": "<strong>Ключевые события:</strong><br>Core CPI Flash Estimate еврозоны y/y в 11:00 (прогноз 2.4% vs предыдущее 2.2%). CPI Flash Estimate y/y в 11:00 (прогноз 3.3% vs предыдущее 3.0%). JOLTS Job Openings в 16:00 (прогноз 6.87M). Выступление BOE Gov Bailey в 16:00.<br><br><strong>Самое важное событие:</strong><br>Flash CPI еврозоны. Ожидается рост Core CPI с 2.2% до 2.4% и Headline с 3.0% до 3.3% — если данные совпадут или превысят прогноз, рынок переоценит путь ЕЦБ.<br><br><strong>Бычий сценарий для EUR / медвежий для DAX:</strong><br>Если Core CPI выше 2.4% — EUR укрепится, DAX попадёт под давление, ожидания снижения ставок ЕЦБ сдвинутся дальше. EURUSD может тестировать ликвидность выше лондонского максимума.<br><br><strong>Медвежий сценарий для EUR / бычий для DAX:</strong><br>Если CPI ниже прогноза — EUR снизится, DAX вырастет на ожиданиях смягчения ЕЦБ. Gold получит поддержку через снижение доходностей Bund.<br><br><strong>JOLTS:</strong><br>Открытые вакансии — ключевой индикатор перед NFP. Если JOLTS разочарует — риск-он для акций и золота, USD под давлением.<br><br><strong>Bailey:</strong><br>Любая ястребиная нотка поддержит GBP. Следить за GBPUSD и GBPAUD.<br><br><strong>Ловушка:</strong><br>CPI еврозоны часто даёт первый импульсный вынос ликвидности до того, как рынок облигаций Bund подтвердит направление. Ждать подтверждения от Bund futures.",
+    "places": ["London CPI 11:00", "NY JOLTS 16:00", "Bund Yields", "ECB Path"],
+    "people": ["EURUSD", "DAX", "Gold", "GBPUSD"],
     "scenarios": [
       {
         "label": "Более вероятный сценарий",
         "type": "base",
-        "probability": 58,
+        "probability": 54,
         "confidence": "medium",
-        "trigger": "Claims немного выше ожиданий, labor costs без неприятного инфляционного сюрприза.",
-        "summary": "Рынок может удержать мягкий risk-on перед NFP: доходности ниже, Gold устойчивый, NASDAQ без сильного давления.",
+        "trigger": "Core CPI выходит в рамках или выше прогноза 2.4%, Headline около 3.3%. JOLTS без значительного отклонения от 6.87M. Bailey нейтрален или слегка ястребиный.",
+        "summary": "EUR укрепляется, DAX под умеренным давлением. GBP сильный. Gold получает поддержку через ожидания более позднего смягчения ЕЦБ и стабильные глобальные доходности.",
+        "assets": [
+          {
+            "symbol": "EURUSD",
+            "direction": "up",
+            "move": "+0.3-0.7%",
+            "note": "горячий CPI сдвигает ожидания по ЕЦБ вправо"
+          },
+          {
+            "symbol": "DAX",
+            "direction": "down",
+            "move": "-0.4-0.8%",
+            "note": "давление через укрепление EUR и рост Bund yields"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.3-0.6%",
+            "note": "поддержка через глобальный инфляционный нарратив"
+          },
+          {
+            "symbol": "GBPUSD",
+            "direction": "up",
+            "move": "+0.2-0.5%",
+            "note": "Bailey поддерживает GBP при ястребиной нотке"
+          }
+        ]
+      },
+      {
+        "label": "Менее вероятный сценарий",
+        "type": "alternative",
+        "probability": 46,
+        "confidence": "medium-low",
+        "trigger": "CPI разочаровывает — Core ниже 2.2% или Headline ниже 2.9%. JOLTS резко снижается ниже 6.5M. Сигнал о ранее ожидаемом смягчении ЕЦБ.",
+        "summary": "EUR падает, DAX ралли. Gold получает краткосрочную поддержку через снижение доходностей, но USD может укрепиться на JOLTS-слабости.",
+        "assets": [
+          {
+            "symbol": "EURUSD",
+            "direction": "down",
+            "move": "-0.4-0.8%",
+            "note": "переоценка пути ЕЦБ при мягком CPI"
+          },
+          {
+            "symbol": "DAX",
+            "direction": "up",
+            "move": "+0.5-1.0%",
+            "note": "ралли на ожиданиях более раннего смягчения ЕЦБ"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.2-0.5%",
+            "note": "снижение Bund yields даёт краткосрочную поддержку"
+          },
+          {
+            "symbol": "GBPUSD",
+            "direction": "neutral",
+            "move": "±0.2%",
+            "note": "GBP удерживается за счёт независимой позиции BOE"
+          }
+        ]
+      }
+    ],
+    "timestamp": "Лондонская и Нью-Йоркская сессии",
+    "meta": "CPI - JOLTS - EUR/DAX дивергенция",
+    "hasMeta": true,
+    "iconIdx": 2
+  },
+  {
+    "id": "wednesday-setup-2026-06-03",
+    "name": "Wednesday Setup",
+    "online": true,
+    "date": "Ср",
+    "expires": "2026-06-03T23:59:59",
+    "title": "ADP + ISM Services + Beige Book: лучший торговый день недели",
+    "preview": "Инфляция в секторе услуг — ключевая чувствительная точка для ФРС, экстремальная волатильность...",
+    "fullMessage": "<strong>Ключевые события:</strong><br>ADP Non-Farm Employment Change в 14:15 (прогноз 116K vs предыдущее 109K). ISM Services PMI в 16:00 (прогноз 53.8 vs предыдущее 53.6). Beige Book в 20:00. GDP Австралии в 03:30 (прогноз 0.5%) — влияет на AUD и Silver.<br><br><strong>Самое важное событие:</strong><br>ISM Services PMI. Экстремальная волатильность: инфляция в секторе услуг напрямую влияет на ожидания по ставкам ФРС, доходности, ликвидность USD и оценки технологических компаний. Обращать внимание на Prices Paid и Employment sub-index, а не только на headline.<br><br><strong>Бычий risk-on сценарий:</strong><br>Если Services умеренно ослабнет, Prices Paid снизится — доходности резко упадут, NASDAQ ускорит рост, Gold получит сильный спрос, USD ослабнет.<br><br><strong>Risk-off сценарий:</strong><br>Если ISM Services выйдет сильным — мощный скачок доходностей, USD укрепится, Gold уязвим, акции под давлением.<br><br><strong>ADP-ловушка:</strong><br>Классический сценарий: ложное движение на ADP в 14:15, разворот к 15:00, а затем настоящее движение после ISM в 16:00. Не открывать крупные позиции на ADP.<br><br><strong>Beige Book:</strong><br>Вечерний драйвер для overnight позиций. Если тон мягкий — Gold и NQ могут продолжить рост в азиатскую сессию.<br><br><strong>Australia GDP:</strong><br>Влияет на GBPAUD через AUD. Слабый GDP — давление на AUD, GBPAUD вверх.",
+    "places": ["ADP 14:15", "ISM Services 16:00", "Prices Paid", "Beige Book 20:00"],
+    "people": ["NASDAQ", "Gold", "USD", "GBPAUD"],
+    "scenarios": [
+      {
+        "label": "Более вероятный сценарий",
+        "type": "base",
+        "probability": 53,
+        "confidence": "medium",
+        "trigger": "ISM Services около прогноза 53.8 или слабее, Prices Paid снижается. ADP около 116K без upside-сюрприза. Beige Book с мягкими формулировками по инфляции.",
+        "summary": "Умеренный risk-on после ISM: доходности снижаются, NASDAQ получает импульс, Gold сильный. ADP-ловушка: первое движение на ADP ложное, настоящее — после ISM.",
+        "assets": [
+          {
+            "symbol": "NASDAQ",
+            "direction": "up",
+            "move": "+0.7-1.4%",
+            "note": "самый чувствительный к ISM Services актив недели"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "up",
+            "move": "+0.5-1.0%",
+            "note": "сильный спрос при падении доходностей после ISM"
+          },
+          {
+            "symbol": "USD",
+            "direction": "down",
+            "move": "-0.3-0.6%",
+            "note": "ослабление при мягких данных по услугам"
+          },
+          {
+            "symbol": "GBPAUD",
+            "direction": "up",
+            "move": "+0.3-0.6%",
+            "note": "AUD под давлением при слабом GDP Австралии 0.5% или ниже"
+          }
+        ]
+      },
+      {
+        "label": "Менее вероятный сценарий",
+        "type": "alternative",
+        "probability": 47,
+        "confidence": "medium-low",
+        "trigger": "ISM Services выходит выше 55+, Prices Paid удерживается высоко. ADP сильный — выше 150K. Beige Book с ястребиными сигналами.",
+        "summary": "Мощный risk-off через скачок доходностей: USD резко укрепляется, NASDAQ и Gold под давлением. Один из худших intraday сценариев для лонгов по акциям.",
+        "assets": [
+          {
+            "symbol": "US10Y",
+            "direction": "up",
+            "move": "+7-12 bps",
+            "note": "экстремальная реакция при горячем ISM Services + Prices Paid"
+          },
+          {
+            "symbol": "NASDAQ",
+            "direction": "down",
+            "move": "-1.0-1.8%",
+            "note": "наибольшее давление через переоценку ставок ФРС"
+          },
+          {
+            "symbol": "Gold",
+            "direction": "down",
+            "move": "-0.7-1.3%",
+            "note": "уязвим при резком росте реальных доходностей"
+          },
+          {
+            "symbol": "GBPAUD",
+            "direction": "neutral",
+            "move": "±0.3%",
+            "note": "AUD может получить поддержку при глобальном risk-off через commodity bid"
+          }
+        ]
+      }
+    ],
+    "timestamp": "Максимальная волатильность: 14:15-16:30 NY",
+    "meta": "Экстремальная волатильность — лучший день недели",
+    "hasMeta": true,
+    "iconIdx": 3
+  },
+  {
+    "id": "thursday-setup-2026-06-04",
+    "name": "Thursday Setup",
+    "online": true,
+    "date": "Чт",
+    "expires": "2026-06-04T23:59:59",
+    "title": "Claims, Labor Costs и Lagarde: предпозиционирование перед NFP",
+    "preview": "Предпозиционирование перед NFP, низкая ликвидность, стоп-ханты...",
+    "fullMessage": "<strong>Ключевые события:</strong><br>Unemployment Claims в 14:30 (прогноз 211K vs предыдущее 215K). Revised Unit Labor Costs q/q в 14:30 (прогноз 2.4% vs предыдущее 2.3%). Выступление ECB President Lagarde в 10:00. RBA Gov Bullock Speaks в 07:00.<br><br><strong>Почему это важно:</strong><br>Комбинация claims + labor costs может сдвинуть ожидания по ФРС прямо перед NFP. Lagarde даст сигналы по пути ЕЦБ после горячего CPI вторника.<br><br><strong>Lagarde — ключевой риск для EUR:</strong><br>Если Lagarde подтвердит паузу в снижении ставок после горячего CPI — EUR может резко укрепиться, DAX попадёт под давление. Если тон мягкий — EUR ослабнет, DAX получит поддержку.<br><br><strong>Бычий сценарий для акций:</strong><br>Если claims вырастут (слабый рынок труда), а labor costs снизятся — доходности упадут, акции остаются сильными, Gold сохраняет поддержку.<br><br><strong>Медвежий сценарий для акций:</strong><br>Если labor costs высокие, claims остаются низкими — рынок переоценит риск длительных высоких ставок. USD и доходности вырастут.<br><br><strong>Примечание по рискам:</strong><br>Четверг перед NFP — низкая ликвидность, выносы стопов, фиксация позиций. Уменьшать объёмы. RBA Bullock может дать сигналы по AUD для торговли GBPAUD.",
+    "places": ["Claims 14:30", "Labor Costs", "Lagarde 10:00", "Pre-NFP"],
+    "people": ["Gold", "EURUSD", "NASDAQ", "GBPAUD"],
+    "scenarios": [
+      {
+        "label": "Более вероятный сценарий",
+        "type": "base",
+        "probability": 57,
+        "confidence": "medium",
+        "trigger": "Claims немного выше прогноза (215K+), Labor Costs без горячего сюрприза. Lagarde нейтральна или слегка мягкая.",
+        "summary": "Мягкий risk-on перед NFP: доходности ниже, Gold устойчивый, NASDAQ без сильного давления. EUR умеренно стабилен.",
         "assets": [
           {
             "symbol": "Gold",
             "direction": "up",
-            "move": "+0.4-0.8%",
+            "move": "+0.4-0.9%",
             "note": "поддержка через снижение доходностей"
           },
           {
@@ -100,85 +310,97 @@
             "direction": "down",
             "move": "-0.2-0.4%",
             "note": "слабее при мягких данных по труду"
+          },
+          {
+            "symbol": "EURUSD",
+            "direction": "neutral",
+            "move": "±0.2%",
+            "note": "зависит от тона Lagarde"
           }
         ]
       },
       {
         "label": "Менее вероятный сценарий",
         "type": "alternative",
-        "probability": 42,
+        "probability": 43,
         "confidence": "medium-low",
-        "trigger": "Labor costs выше ожиданий, claims остаются низкими.",
-        "summary": "Рынок может переоценить риск более долгих высоких ставок: USD и доходности вверх, акции и Gold под давлением.",
+        "trigger": "Labor Costs выше 2.6%, Claims остаются низкими. Lagarde ястребиная после горячего CPI.",
+        "summary": "Hawkish repricing: USD и доходности вверх, акции и Gold под давлением. EUR резко вырастет на ястребиной Lagarde.",
         "assets": [
           {
             "symbol": "US Yields",
             "direction": "up",
-            "move": "+4-8 bps",
+            "move": "+5-9 bps",
             "note": "главный канал давления на risk assets"
           },
           {
             "symbol": "Gold",
             "direction": "down",
-            "move": "-0.5-1.0%",
+            "move": "-0.6-1.1%",
             "note": "уязвим при росте real yields"
           },
           {
-            "symbol": "NASDAQ",
+            "symbol": "EURUSD",
+            "direction": "up",
+            "move": "+0.3-0.6%",
+            "note": "если Lagarde подтверждает паузу ЕЦБ"
+          },
+          {
+            "symbol": "DAX",
             "direction": "down",
-            "move": "-0.5-1.1%",
-            "note": "давление через ставки"
+            "move": "-0.5-1.0%",
+            "note": "давление через EUR и доходности Bund"
           }
         ]
       }
     ],
-    "timestamp": "Данные США: 14:30",
-    "meta": "Средне-высокая волатильность",
+    "timestamp": "Данные США: 14:30 | Lagarde: 10:00",
+    "meta": "Средняя волатильность — предпозиционирование NFP",
     "hasMeta": true,
     "iconIdx": 4
   },
   {
-    "id": "friday-nfp-desk-2026-05-29",
+    "id": "friday-nfp-desk-2026-06-05",
     "name": "Friday NFP Desk",
     "online": true,
     "date": "Пт",
-    "expires": "2026-05-29T23:59:59",
-    "title": "NFP и зарплаты: главное событие недели",
-    "preview": "Рынок должен уделять приоритет зарплатам, безработице, а затем payrolls...",
-    "fullMessage": "<strong>Ключевые события:</strong><br>US Non-Farm Payrolls, уровень безработицы и Average Hourly Earnings в 14:30.<br><br><strong>Приоритет важности:</strong><br>1. Average Hourly Earnings<br>2. Уровень безработицы<br>3. Payrolls headline<br><br><strong>Бычий risk-on сценарий:</strong><br>Если payrolls окажутся слабее, безработица вырастет, а зарплаты замедлятся, доходности могут резко упасть, Gold — сильно вырасти, NASDAQ — показать мощное ралли, а USD — агрессивно снизиться.<br><br><strong>Бычий для USD risk-off сценарий:</strong><br>Если payrolls будут сильными, а зарплаты — высокими, ожидания снижения ставок ФРС могут быть пересмотрены, доходности — резко вырасти, USD — укрепиться, Gold — сильно снизиться, а акции — попасть под давление.<br><br><strong>Предупреждение по NFP:</strong><br>Первые движения часто оказываются выносом стопов с разворотом через 5-20 минут, особенно когда payrolls и wages противоречат друг другу.",
-    "places": ["14:25-15:30 NY", "AHE", "Unemployment", "Payrolls"],
+    "expires": "2026-06-05T23:59:59",
+    "title": "NFP: прогноз слабее — рынок ждёт подтверждения тренда",
+    "preview": "Прогноз NFP 95K vs предыдущее 115K — рынок ожидает замедления рынка труда...",
+    "fullMessage": "<strong>Ключевые события:</strong><br>Non-Farm Payrolls в 14:30 (прогноз 95K vs предыдущее 115K). Unemployment Rate в 14:30 (прогноз 4.3%). Average Hourly Earnings m/m в 14:30 (прогноз 0.3% vs предыдущее 0.2%). Выступление BOE Gov Bailey в 20:00.<br><br><strong>Приоритет важности:</strong><br>1. Average Hourly Earnings (инфляционный компонент)<br>2. Уровень безработицы<br>3. Payrolls headline<br><br><strong>Ключевой контекст этой недели:</strong><br>Прогноз 95K — значительно слабее предыдущего 115K. Если подтвердится, это усилит ожидания снижения ставок ФРС. Но Wages выросли прогноз с 0.2% до 0.3% — возможен stagflationary mix: слабые payrolls + горячие зарплаты.<br><br><strong>Бычий risk-on сценарий:</strong><br>Если payrolls слабые (ниже 95K), безработица растёт или стабильна, а wages не превышают 0.3% — доходности резко упадут, Gold сильно вырастет, NASDAQ покажет мощное ралли, USD агрессивно снизится.<br><br><strong>Stagflationary risk-off сценарий:</strong><br>Если payrolls слабые, но Wages выше 0.4% — это худший сценарий: и рецессионные страхи, и инфляционное давление. Gold может сначала вырасти, затем упасть при росте реальных доходностей.<br><br><strong>Бычий USD risk-off сценарий:</strong><br>Если payrolls сильные (150K+) и wages высокие — ожидания снижения ставок ФРС пересматриваются, USD укрепляется, Gold резко снижается, акции под давлением.<br><br><strong>Предупреждение по NFP:</strong><br>Первые движения часто оказываются выносом стопов с разворотом через 5-20 минут. CAD Employment Change выходит одновременно — может создать дополнительный шум в USD/CAD, отвлекая ликвидность.",
+    "places": ["14:25-15:30 NY", "AHE", "Unemployment", "CAD Employment"],
     "people": ["Gold", "NASDAQ", "USD", "US10Y"],
     "scenarios": [
       {
         "label": "Более вероятный сценарий",
         "type": "base",
-        "probability": 55,
+        "probability": 52,
         "confidence": "medium",
-        "trigger": "Wages замедляются, unemployment чуть выше или payrolls без сильного upside-сюрприза.",
-        "summary": "Risk-on реакция: доходности вниз, Gold и NASDAQ получают импульс, USD слабеет.",
+        "trigger": "Payrolls около прогноза (80-110K), wages 0.3% или ниже, unemployment 4.3%.",
+        "summary": "Risk-on реакция: доходности вниз, Gold и NASDAQ получают импульс, USD слабеет. Чистое движение без stagflation-ловушки.",
         "assets": [
           {
             "symbol": "Gold",
             "direction": "up",
-            "move": "+0.8-1.5%",
+            "move": "+0.9-1.6%",
             "note": "самая чистая реакция на падение доходностей"
           },
           {
             "symbol": "NASDAQ",
             "direction": "up",
-            "move": "+1.0-1.8%",
+            "move": "+1.0-1.9%",
             "note": "чувствителен к переоценке ставок"
           },
           {
             "symbol": "USD",
             "direction": "down",
-            "move": "-0.4-0.8%",
+            "move": "-0.4-0.9%",
             "note": "снижение при мягком labor report"
           },
           {
             "symbol": "US10Y",
             "direction": "down",
-            "move": "-6-12 bps",
+            "move": "-7-13 bps",
             "note": "ключевое подтверждение сценария"
           }
         ]
@@ -186,34 +408,34 @@
       {
         "label": "Менее вероятный сценарий",
         "type": "alternative",
-        "probability": 45,
+        "probability": 48,
         "confidence": "medium-low",
-        "trigger": "Payrolls сильные, wages выше ожиданий, unemployment не растёт.",
-        "summary": "Risk-off через ставки: доходности и USD вверх, Gold и акции получают резкое давление.",
+        "trigger": "Payrolls выше 130K или wages выше 0.4% — рынок резко пересматривает путь ФРС.",
+        "summary": "Risk-off через ставки: доходности и USD вверх, Gold и акции получают резкое давление. Возможен stagflationary микс.",
         "assets": [
           {
             "symbol": "USD",
             "direction": "up",
-            "move": "+0.5-1.0%",
-            "note": "реакция на hawkish repricing"
+            "move": "+0.5-1.1%",
+            "note": "hawkish repricing ФРС"
           },
           {
             "symbol": "Gold",
             "direction": "down",
-            "move": "-1.0-1.8%",
-            "note": "может резко просесть на росте доходностей"
+            "move": "-1.1-2.0%",
+            "note": "резкое падение на росте доходностей"
           },
           {
             "symbol": "NASDAQ",
             "direction": "down",
-            "move": "-1.2-2.2%",
+            "move": "-1.3-2.3%",
             "note": "самый уязвимый индекс при скачке yields"
           },
           {
             "symbol": "US10Y",
             "direction": "up",
-            "move": "+8-15 bps",
-            "note": "если движение подтверждается облигациями"
+            "move": "+9-16 bps",
+            "note": "если подтверждается облигациями"
           }
         ]
       }
@@ -224,15 +446,15 @@
     "iconIdx": 5
   },
   {
-    "id": "equity-index-view-2026-05-31",
+    "id": "equity-index-view-2026-06-01",
     "name": "Equity Index View",
-    "online": false,
+    "online": true,
     "date": "Активы",
-    "expires": "2026-05-31T23:59:59",
+    "expires": "2026-06-06T23:59:59",
     "title": "Недельный взгляд на DAX, NASDAQ и S&P500",
     "preview": "Акции выглядят конструктивно, но остаются уязвимыми при росте доходностей...",
-    "fullMessage": "<strong>DAX:</strong><br>Смещение нейтрально-бычье, пока доходности не начнут резко расти. Основные драйверы — слабость EUR и глобальный риск-аппетит. Лучшие сессии — открытие Лондона и пересечение с Нью-Йорком. Главный риск — укрепление EUR после CPI.<br><br><strong>NASDAQ:</strong><br>Смещение бычье, но хрупкое. Это наиболее чувствительный к ставкам актив на этой неделе. ISM и NFP могут быстро изменить настроение рынка, если данные окажутся сильными.<br><br><strong>S&P500:</strong><br>Смещение умеренно-бычье и более защитное по сравнению с NASDAQ. Однако индекс всё равно будет сильно реагировать на данные по рынку труда и доходностям.",
-    "places": ["London Open", "NY Overlap", "Yields", "EUR"],
+    "fullMessage": "<strong>DAX:</strong><br>Смещение нейтрально-бычье, пока доходности Bund не начнут резко расти. Основные драйверы — CPI еврозоны во вторник и Lagarde в четверг. Риск: горячий CPI может укрепить EUR и надавить на DAX. Лучшие сессии — открытие Лондона и пересечение с Нью-Йорком.<br><br><strong>NASDAQ:</strong><br>Смещение бычье при условии слабого NFP и умеренного ISM Services. Наиболее чувствительный к ставкам актив этой недели. ISM Services в среду и NFP в пятницу могут быстро изменить настроение при сильных данных. Прогноз NFP 95K — при подтверждении даёт чистый лонг-импульс.<br><br><strong>S&P500:</strong><br>Смещение умеренно-бычье и более защитное по сравнению с NASDAQ. Сильнее реагирует на данные по рынку труда и доходностям. Менее волатилен на ISM, чем NASDAQ.",
+    "places": ["London Open", "NY Overlap", "Bund Yields", "EUR CPI"],
     "people": ["DAX", "NASDAQ", "S&P500", "US10Y"],
     "timestamp": "Недельный обзор активов",
     "meta": "Фондовые индексы — чувствительны к доходностям",
@@ -240,49 +462,49 @@
     "iconIdx": 6
   },
   {
-    "id": "metals-view-2026-05-31",
+    "id": "metals-view-2026-06-01",
     "name": "Metals View",
     "online": true,
     "date": "Активы",
-    "expires": "2026-05-31T23:59:59",
-    "title": "Gold и Silver остаются бычьими, но волатильными",
-    "preview": "Металлы поддерживаются ожиданиями снижения ставок, но уязвимы к укреплению USD...",
-    "fullMessage": "<strong>Gold:</strong><br>Среднесрочное смещение остаётся бычьим благодаря ожиданиям снижения ставок и сценариям снижения доходностей. Основной риск — временные шорт-сквизы по USD и рост доходностей после сильных данных США.<br><br><strong>Лучший сетап по Gold:</strong><br>Продолжение движения после слабых данных по рынку труда или более мягких инфляционных деталей, особенно если US10Y подтверждает снижение.<br><br><strong>Silver:</strong><br>Более волатильная high-beta версия Gold. Также чувствителен к PMI Китая и промышленным настроениям. Silver способен опережать Gold, когда одновременно совпадают позитив для драгоценных металлов и улучшение настроений роста.",
-    "places": ["US10Y", "DXY", "China PMIs", "NY Session"],
+    "expires": "2026-06-06T23:59:59",
+    "title": "Gold и Silver: бычий настрой при слабом NFP, риск коррекции при сильных данных",
+    "preview": "Металлы поддерживаются ожиданиями снижения ставок, уязвимы при hawkish-сюрпризе...",
+    "fullMessage": "<strong>Gold:</strong><br>Среднесрочное смещение бычье. Основные катализаторы недели — слабый прогноз NFP (95K) и возможное снижение доходностей. Оптимальный сетап: покупка после слабых данных по труду при подтверждении снижения US10Y. Основной риск — stagflationary mix на NFP (слабые payrolls + горячие wages) может создать неопределённость направления.<br><br><strong>Лучший сетап по Gold:</strong><br>Торговля continuation move после слабых данных по труду (Thursday Claims или Friday NFP), особенно если US10Y подтверждает снижение ниже ключевых уровней.<br><br><strong>Silver:</strong><br>High-beta версия Gold с промышленным компонентом. Австралийский GDP в среду и China PMIs в начале недели добавляют industrial demand narrative. Silver может опережать Gold при одновременном позитиве для драгоценных и промышленных металлов. Следить за GBPAUD как proxy для AUD-sentiment.",
+    "places": ["US10Y", "DXY", "AUD GDP", "NY Session"],
     "people": ["XAUUSD", "Silver", "USD", "Yields"],
     "timestamp": "Недельный обзор металлов",
-    "meta": "Бычий настрой — высокая волатильность",
+    "meta": "Бычий настрой — высокая волатильность на NFP",
     "hasMeta": true,
     "iconIdx": 7
   },
   {
-    "id": "fx-view-2026-05-31",
+    "id": "fx-view-2026-06-01",
     "name": "FX View",
-    "online": false,
+    "online": true,
     "date": "FX",
-    "expires": "2026-05-31T23:59:59",
-    "title": "EURUSD нейтрален, GBP сильнее, GBPAUD бычий",
-    "preview": "Направление FX зависит от CPI, данных по рынку труда и относительной переоценки центральных банков...",
-    "fullMessage": "<strong>EURUSD:</strong><br>Смещение нейтральное и зависит от данных. Главные драйверы — CPI еврозоны и данные по рынку труда США. Следите за выносами стопов вокруг максимумов и минимумов Лондона после CPI.<br><br><strong>GBPUSD:</strong><br>Смещение умеренно-бычье против EUR, поскольку ожидания по BOE остаются относительно жёсткими из-за устойчивой инфляции в Великобритании.<br><br><strong>GBPAUD:</strong><br>Смещение бычье по GBP. AUD остаётся уязвимым, если данные Китая или Австралии разочаруют. Лучшие сессии — Азия и Лондон.",
-    "places": ["Euro CPI", "NFP", "BOE", "China Data"],
+    "expires": "2026-06-06T23:59:59",
+    "title": "EURUSD: бычий риск от CPI; GBP сильнее; GBPAUD зависит от AUD",
+    "preview": "EUR под влиянием горячего CPI, GBP поддерживается Bailey, GBPAUD зависит от AUD-данных...",
+    "fullMessage": "<strong>EURUSD:</strong><br>Смещение нейтрально-бычье на этой неделе из-за потенциально горячего CPI во вторник (прогноз Core 2.4%, Headline 3.3%). Если данные превысят — EUR вверх, Lagarde в четверг подтвердит или опровергнёт. Следить за выносами стопов вокруг лондонских максимумов после CPI. Основной риск — сильный NFP может резко укрепить USD и обнулить CPI-ралли EUR.<br><br><strong>GBPUSD:</strong><br>Смещение умеренно-бычье. Bailey выступает во вторник и пятницу — двойное окно для переоценки GBP. BOE сохраняет относительно жёсткую позицию по сравнению с ЕЦБ. Лучший лонг-сетап при слабых данных США.<br><br><strong>GBPAUD:</strong><br>Смещение бычье по GBP. AUD под давлением через австралийский GDP в среду (прогноз 0.5% — рыночные ожидания невысоки) и Commodity Prices. Лучшие сессии — Азия (реакция на AUD-данные) и начало Лондона. RBA Bullock в четверг — риск для AUD-направления.",
+    "places": ["Euro CPI Tue", "NFP Fri", "BOE Bailey", "AUD GDP Wed"],
     "people": ["EURUSD", "GBPUSD", "GBPAUD", "AUD"],
     "timestamp": "Недельный обзор FX",
-    "meta": "FX — зависимость от данных",
+    "meta": "FX — CPI и NFP как главные драйверы",
     "hasMeta": true,
     "iconIdx": 8
   },
   {
-    "id": "weekly-playbook-2026-05-31",
+    "id": "weekly-playbook-2026-06-01",
     "name": "Weekly Playbook",
     "online": true,
     "date": "План",
-    "expires": "2026-05-31T23:59:59",
-    "title": "Лучшие дни, ловушки и более безопасные правила исполнения",
-    "preview": "Среда и пятница предлагают лучшие условия для импульсной торговли...",
-    "fullMessage": "<strong>Лучшие торговые дни:</strong><br>1. Среда<br>2. Пятница<br>3. Вторник<br><br><strong>Худшие дни для переторговки:</strong><br>Четверг и понедельник перед ISM.<br><br><strong>Лучшая возможность:</strong><br>NASDAQ вокруг ISM и NFP, поскольку именно здесь наибольшая вероятность сильного импульсного движения на этой неделе.<br><br><strong>Более безопасные сетапы:</strong><br>Торговать после подтверждения, ждать подтверждения от доходностей и отдавать предпочтение continuation-сетапам после стабилизации первой реакции.<br><br><strong>Агрессивные сетапы:</strong><br>Fade первого импульса NFP, предварительное позиционирование в Gold перед ожиданиями слабого рынка труда или торговля пробоями EURUSD после CPI. Эти сценарии требуют более жёсткого риск-менеджмента.",
+    "expires": "2026-06-06T23:59:59",
+    "title": "Лучшие дни, ловушки и правила исполнения на неделю",
+    "preview": "Среда и пятница — лучшие условия для импульсной торговли на этой неделе...",
+    "fullMessage": "<strong>Лучшие торговые дни:</strong><br>1. Пятница (NFP — экстремальная волатильность)<br>2. Среда (ADP + ISM Services + Beige Book)<br>3. Вторник (EUR CPI + JOLTS)<br><br><strong>Худшие дни для переторговки:</strong><br>Четверг (предпозиционирование NFP, низкая ликвидность, стоп-ханты) и понедельник до 15:45 (ожидание ISM).<br><br><strong>Лучшие возможности:</strong><br>NASDAQ и Gold вокруг ISM Services (среда) и NFP (пятница) — наибольшая вероятность сильного импульсного движения. EURUSD вокруг EUR CPI (вторник 11:00) — дивергенция с DAX.<br><br><strong>Более безопасные сетапы:</strong><br>Торговать после подтверждения. Ждать закрепления US10Y. Отдавать предпочтение continuation после стабилизации первой реакции. Избегать входа в первые 5 минут после NFP.<br><br><strong>Агрессивные сетапы:</strong><br>Fade первого импульса NFP (особенно при противоречии payrolls vs wages). Предпозиционирование в Gold перед слабым рынком труда. Торговля пробоями EURUSD после CPI при подтверждении от Bund yields. GBPAUD шорт при слабом AUD GDP в среду.<br><br><strong>Stagflation-предупреждение:</strong><br>Если NFP слабый, но wages горячие — избегать автоматического лонга по Gold: первый импульс может быть ловушкой. Ждать реакции реальных доходностей.",
     "places": ["Среда", "Пятница", "Вторник", "NY Session"],
-    "people": ["NASDAQ", "Gold", "EURUSD", "DAX"],
-    "timestamp": "Гайд по исполнению",
+    "people": ["NASDAQ", "Gold", "EURUSD", "GBPAUD"],
+    "timestamp": "Гайд по исполнению на 1-6 июня",
     "meta": "Playbook — управление рисками",
     "hasMeta": true,
     "iconIdx": 9
